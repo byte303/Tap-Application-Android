@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.nature.taps.game.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.nature.taps.game.ui.mining.MiningFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_mining" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_dialogFragmentMoney"
+            app:destination="@id/dialogFragmentMoney" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_dialogFragmentEnergy"
+            app:destination="@id/dialogFragmentEnergy" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_dialogFragmentBoost"
+            app:destination="@id/dialogFragmentBoost" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.nature.taps.game.ui.avatar.AvatarFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_avatar" />
+    <dialog
+        android:id="@+id/dialogFragmentMoney"
+        android:name="com.nature.taps.game.ui.dialog.DialogFragmentMoney"
+        android:label="fragment_dialog_money"
+        tools:layout="@layout/fragment_dialog_money" />
+    <fragment
+        android:id="@+id/fragmentImprove"
+        tools:layout="@layout/fragment_improve"
+        android:name="com.nature.taps.game.ui.improve.FragmentImprove"
+        android:label="FragmentImprove" />
+    <dialog
+        android:id="@+id/dialogFragmentEnergy"
+        tools:layout="@layout/fragment_dialog_energy"
+        android:name="com.nature.taps.game.ui.dialog.DialogFragmentEnergy"
+        android:label="DialogFragmentEnergy" />
+    <dialog
+        android:id="@+id/dialogFragmentBoost"
+        android:name="com.nature.taps.game.ui.dialog.DialogFragmentBoost"
+        android:label="fragment_dialog_boost"
+        tools:layout="@layout/fragment_dialog_boost" />
+</navigation>
